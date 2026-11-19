@@ -1,0 +1,26 @@
+﻿@page
+@model wt_lab5_5razor_antonov.Pages.Cars.DeleteModel
+
+@{
+    ViewData["Title"] = "Удалить машину";
+}
+
+<h1>Удалить машину</h1>
+
+<h3>Вы уверены, что хотите удалить эту запись?</h3>
+<div>
+    <h4>Машина</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Марка / Модель</dt>
+        <dd class="col-sm-10">@Model.Car.Brand @Model.Car.Model</dd>
+
+        @* Добавь остальные поля, если нужно (Цена, Год и т.д.) *@
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Car.Id" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Вернуться к списку</a>
+    </form>
+</div>
